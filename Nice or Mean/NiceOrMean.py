@@ -13,7 +13,6 @@
 #
 import PIL as pl
 
-
 def start(nice=0,mean=0,name=""):
     #get user's name
     name = describe_game(name) 
@@ -75,12 +74,21 @@ def score(nice,mean,name):
 def win(nice,mean,name):
     #substitute the {} wildcards with our variable values
     print("\nNice job {}, you win! \nEveryone loves and you've \nmade lots of friends along the way!".format(name))
+    
+    #opens smiley face img
+    from PIL import Image
+    img = Image.open("smile.png")
+    img.show()
     # call again function and pass in our variables
     again(nice,mean,name)
 
 def lose(nice,mean,name):
     #substitute the {} wildcards with our variable values
     print("\nAhh too bad, game over! \n{}, you live in a dirty beat-up \nvan by the river, wretched and alone!".format(name))
+    #opens frowny face img
+    from PIL import Image
+    img = Image.open("forwn.png")
+    img.show()
     # call again function and pass in our variables
     again(nice,mean,name)
     
