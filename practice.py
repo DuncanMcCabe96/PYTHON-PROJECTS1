@@ -1,5 +1,20 @@
-def getSum(num1,num2):
-    answer = num1 + num2
-    print("The answer is {}.".format(answer))
-    
-myAdd = getSum
+import os
+
+
+def writeData():
+    data = 'Hello World'
+    with open('test.txt','a') as f:
+        f.write(data)
+        f.close()
+
+
+def openFile():
+    with open('test.txt', 'r') as f:
+        data = f.read()
+        print(data)
+        f.close()
+
+
+if __name__ == "__main__":
+    writeData()
+    openFile()
